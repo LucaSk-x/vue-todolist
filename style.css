@@ -1,0 +1,32 @@
+body {
+    background-color: #27282c;
+    height: 100vh;
+}
+
+ul li {
+    position: relative;
+}
+
+ul li i {
+    position: absolute;
+    right: 5px;
+}
+
+.form-check-input:checked {
+    background-color: #6eff3e;
+    border-color: #6eff3e;
+}
+
+.form-check-input:focus {
+    border-color: #6be742;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(22, 123, 44, 0.25);
+}
+
+.my-btn {
+    color: #000;
+    background-color: #6eff3e;
+    border: #579642;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
