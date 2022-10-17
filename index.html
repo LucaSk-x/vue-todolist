@@ -4,43 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/db1680b8fb.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css'
         integrity='sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==' crossorigin='anonymous' />
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>To do list</title>
 </head>
 <body>
-    <div id="app" class="container">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <div class="col-content">
-                    <div class="title pt-3">
-                        <h1 class="text-white text-center">To Do List</h1>
-                        <p class="text-white text-center">Don't forget the important things</p>
-                    </div>
-                    <div class="card p-3">
-                        <ul class="list-group list-group-flush">
-                            <li v-for="(item, i) in list" class="d-flex text-center py-2" >
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" v-model="item.done">
-                                    <label class="form-check-label" for="flexSwitchCheckChecked"></label>
-                                </div>
-                                <div :class="{'text-decoration-line-through': item.done}">{{item.text}}</div>
-                                <i class="fa-solid fa-trash-can text-danger align-self-end" @click="remove(i)"></i>
-                            </li>
-                        </ul>
-                        <div class="input pt-3">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Add thing to do" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="input" v-on:keyup.enter="addThings">
-                                <button class="my-btn" type="button" id="button-addon2" @click="addThings" >Add</button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="app" class="container w-100 h-100">
+      <div class="page-content d-flex justify-content-center align-items-center w-100">
+        <div class="row justify-content-center align-items-center w-100">
+          <div class="col-8">
+              <div class="col-content">
+                  <div class="title py-4">
+                      <h1 class="text-white text-center fw-bold">To Do List</h1>
+                      <p class="text-white text-center">Don't forget the important things</p>
+                  </div>
+                  <div class="my-card text-white p-3">
+                      <ul class="list-group list-group-flush">
+                          <li v-for="(item, i) in list" class="d-flex text-center py-2" >
+                              <div class="form-check form-switch">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" v-model="item.done">
+                                  <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                              </div>
+                              <div class="todoitems" :class="{'text-decoration-line-through': item.done}">{{item.text}}</div>
+                              <i class="fa-solid fa-trash-can text-danger align-self-end" @click="remove(i)"></i>
+                          </li>
+                      </ul>
+                      <div class="input pt-3">
+                          <div class="input-group mb-3">
+                              <input type="text" class="form-control" placeholder="Add thing to do" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="input" v-on:keyup.enter="addThings">
+                              <button class="my-btn text-white px-3" type="button" id="button-addon2" @click="addThings" >Add</button>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
     </div>
     <script src="JavaScript/app.js"></script>
 </body>
